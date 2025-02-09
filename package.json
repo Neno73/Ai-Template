@@ -1,0 +1,22 @@
+{
+  "name": "ai-template",
+  "version": "1.0.0",
+  "type": "module",
+  "bin": {
+    "roadmap-sync": "./dist/scripts/roadmap-sync.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node dist/test.js",
+    "postbuild": "chmod +x dist/scripts/roadmap-sync.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "file:../Documents/Cline/MCP/git-server/node_modules/@modelcontextprotocol/sdk",
+    "@octokit/rest": "^20.0.2",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "typescript": "^5.3.3"
+  }
+}

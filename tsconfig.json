@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "rootDirs": ["./src", "./scripts"],
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "typeRoots": ["./node_modules/@types", "./src"],
+    "paths": {
+      "@modelcontextprotocol/sdk/*": ["../Documents/Cline/MCP/git-server/node_modules/@modelcontextprotocol/sdk/*"]
+    },
+    "baseUrl": "."
+  },
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifiers": true
+  },
+  "include": ["src/**/*", "scripts/**/*"],
+  "exclude": ["node_modules"]
+}
