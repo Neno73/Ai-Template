@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "type": "module",
   "bin": {
-    "roadmap-sync": "./dist/scripts/roadmap-sync.js"
+    "roadmap-sync": "./dist/scripts/roadmap-sync.js",
+    "context-transfer": "./dist/scripts/context-transfer.js"
   },
   "scripts": {
     "build": "tsc",
     "test": "npm run build && node dist/test.js",
-    "postbuild": "chmod +x dist/scripts/roadmap-sync.js"
+    "postbuild": "chmod +x dist/scripts/roadmap-sync.js dist/scripts/context-transfer.js"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "file:../Documents/Cline/MCP/git-server/node_modules/@modelcontextprotocol/sdk",
