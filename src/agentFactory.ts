@@ -5,14 +5,18 @@ export class AgentFactory {
   static async createAgent(taskDescription: string) {
     // 1. Check memory first
     const context = await ContextSystem.getTaskContext(taskDescription);
-    
+
     // 2. Create agent with enriched context
-    const agent = new AgentSystem(`${context}\n\nCurrent Task: ${taskDescription}`);
-    
+    const agent = new AgentSystem(
+      `${context}\n\n` +
+      `You can access previous context entries using the ContextSystem.getTaskContext method.\n` +
+      `Current Task: ${taskDescription}`
+    );
+
     // 3. Store creation event in memory
     await ContextSystem.storeContext(`Agent created for task: ${taskDescription}`, {
       type: 'agent-creation',
-      timestamp: new Date().toISOString()
+      timestamp: new Date().toISOString(),
     });
 
     return agent;

@@ -9,6 +9,7 @@ declare module '@modelcontextprotocol/sdk' {
     content: string;
     embedding: number[];
     timestamp: string;
+    sessionId: string;
     metadata: Record<string, any>;
   }
 
